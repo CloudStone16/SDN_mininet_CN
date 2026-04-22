@@ -1,0 +1,2 @@
+ryu==4.34 # or latest compatible version
+eventlet==0.30.2 # ryu has specific eventlet requirements sometimes
