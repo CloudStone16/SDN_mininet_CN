@@ -31,10 +31,6 @@ def run():
     net.addLink(h2, s2)
     net.addLink(h3, s3)
     
-    # Topology: s1 -- s2 -- s3
-    #             \       /
-    #              -------
-    # (loop for redundancy/stp, but we just want to test topology discovery)
     link_s1_s2 = net.addLink(s1, s2)
     link_s2_s3 = net.addLink(s2, s3)
     link_s1_s3 = net.addLink(s1, s3)

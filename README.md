@@ -1,6 +1,7 @@
 # SDN Topology Change Detector
 
-This repository contains a Ryu-based SDN controller application that dynamically detects changes in your network topology (e.g. switch connections, disconnections, link additions, and link failures).
+This repository contains a Ryu-based SDN controller application that dynamically detects changes in your network topology (e.g. switch connections, disconnections, link additions, and link failures). This was done for the Mininet assignment for the course Computer Networks
+Author - Anirudh Ramesh
 
 ## Features Implemented Based on Requirements:
 - **Monitor switch/link events:** Listens for `EventSwitchEnter`, `EventSwitchLeave`, `EventLinkAdd`, and `EventLinkDelete`.
@@ -9,8 +10,13 @@ This repository contains a Ryu-based SDN controller application that dynamically
 - **Log updates:** Logs a clear message detailing the exact nature of the change.
 
 ## Prerequisites
-- **Ryu SDN Framework:** `pip install ryu`
+- **Requirements:** Run the following commands in the project directory to install all the dependencies.
+```zsh
+pip install -r requirements.txt
+```
 - **Mininet:** Installed on the system.
+- A virtual machine with Ubuntu 20.04 is recommended, this hasn't been tested on other versions
+- For the purposes of this demonstration, I'm using Multipass.
 
 ## How to Run the Demonstration
 
@@ -18,15 +24,18 @@ You will need two terminal windows.
 
 ### Terminal 1: Run the Ryu Controller
 You must use the `--observe-links` flag to instruct Ryu's build-in topology discovery application to send out LLDP packets and monitor links.
-```bash
+```zsh
 ryu-manager --observe-links topology_detector.py
 ```
 
 ### Terminal 2: Run the Mininet Simulation
 A custom test script has been provided that automatically creates a network and simulates link failures and switch disconnections. Run this with `sudo`:
-```bash
+```zsh
 sudo python3 test_topo.py
 ```
+- Note, test_topo.py has some preliminary tests before the Mininet CLI actually runs, I'd say give it around
+a minute.
+- In the CLI, you can run `link s1 s2 down` to remove those links, and `link s1 s2 up` to bring them back up. The test_topology.py has only 3 hosts connected to 3 switches, and these switches are connected amongst each other. Feel free to modify the network structure 
 
 ### Expected Output
 In the Terminal 1 window, you will see output like this as the network starts and Mininet simulates failures:
@@ -48,3 +57,23 @@ In the Terminal 1 window, you will see output like this as the network starts an
 [INFO] *** TOPOLOGY CHANGE DETECTED: Switch Disconnected ***
 [INFO] Details: Switch DPID: 3
 ```
+
+### Screenshots
+- #### Initialising the detector
+![1.png](./screenshots/1.png)
+
+- #### Running the tester and setting up the base topology
+
+![2.png](./screenshots/2.png)
+
+- #### Mininet CLI
+
+![3.png](./screenshots/3.png)
+
+- #### Remaining tests
+
+![4.png](./screenshots/4.png)
+
+![5.png](./screenshots/5.png)
+
+![6.png](./screenshots/6.png)
