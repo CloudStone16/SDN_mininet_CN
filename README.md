@@ -1,6 +1,7 @@
 # SDN Topology Change Detector
 
-This repository contains a Ryu-based SDN controller application that dynamically detects changes in your network topology (e.g. switch connections, disconnections, link additions, and link failures). This was done for the Mininet assignment for the course Computer Networks
+This repository contains a Ryu-based SDN controller application that dynamically detects changes in your network topology (e.g. switch connections, disconnections, link additions, and link failures). This was done for the Mininet assignment for the course Computer Networks.
+
 Author - Anirudh Ramesh
 
 ## Features Implemented Based on Requirements:
