@@ -72,8 +72,9 @@ In the Terminal 1 window, you will see output like this as the network starts an
 
 - #### Remaining tests
 
+![5.png](./screenshots/5.png)
+
 ![4.png](./screenshots/4.png)
 
-![5.png](./screenshots/5.png)
 
 ![6.png](./screenshots/6.png)
