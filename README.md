@@ -2,7 +2,11 @@
 
 This repository contains a Ryu-based SDN controller application that dynamically detects changes in your network topology (e.g. switch connections, disconnections, link additions, and link failures). This was done for the Mininet assignment for the course Computer Networks.
 
-Author - Anirudh Ramesh
+Author - **Anirudh Ramesh**
+
+SRN - **PES1UG24CS929**
+
+Section - **4k**
 
 ## Features Implemented Based on Requirements:
 - **Monitor switch/link events:** Listens for `EventSwitchEnter`, `EventSwitchLeave`, `EventLinkAdd`, and `EventLinkDelete`.
